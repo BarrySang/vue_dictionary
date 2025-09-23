@@ -34,14 +34,15 @@ export default {
   width: 95% !important;
 }
 
-/* .data-title {
-  color: rgb(21, 34, 68);
-} */
-
 .definition-container p {
-  font-size: 18px;
+  font-size: 12px;
   display: block;
   margin: 0;
   color: rgb(27, 30, 33);
+}
+
+.data-title {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 </style>

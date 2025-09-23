@@ -71,7 +71,7 @@ export default {
 
 .word,
 .phonetic-text {
-  font-size: 64px;
+  font-size: 26px;
   margin: 5px;
   color: black;
 }
