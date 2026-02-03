@@ -1,13 +1,15 @@
 <template>
-  <div class="container">
-    <h3 @click="toggleVisibility" class="title">
+  <div>
+    <button
+      @click="toggleVisibility"
+      class="text-xs text-slate-500 hover:text-slate-700 flex items-center gap-1 transition-colors cursor-pointer"
+    >
       License
-      <span v-if="!isVisible">+</span>
-      <span v-else>-</span>
-    </h3>
-    <div class="license-content" v-show="isVisible">
-      <p>{{ name }}</p>
-      <p>{{ url }}</p>
+      <span class="text-[10px]">{{ isVisible ? '−' : '+' }}</span>
+    </button>
+    <div v-show="isVisible" class="mt-1 space-y-0.5">
+      <p class="text-[10px] text-slate-400">{{ name }}</p>
+      <p class="text-[10px] text-slate-400 break-all">{{ url }}</p>
     </div>
   </div>
 </template>
@@ -31,15 +33,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.container h3 {
-  margin: 0;
-  font-size: 12px;
-}
-
-.license-content p {
-  font-size: 8px;
-  margin: 0;
-}
-</style>

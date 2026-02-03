@@ -1,13 +1,10 @@
 <template>
-  <h1>{{ title }}</h1>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">{{ title }}</h1>
 </template>
 
 <script>
 export default {
-  name: 'HeaderComacponent',
+  name: 'HeaderComponent',
   props: {
     title: String,
   },

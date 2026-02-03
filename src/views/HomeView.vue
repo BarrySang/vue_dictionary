@@ -2,11 +2,9 @@
 import { ref } from 'vue'
 import SectionComponent from '@/components/SectionComponent.vue'
 
-// ✅ Reactive state
 const wordSearched = ref(false)
 const results = ref<any[]>([])
 
-// ✅ Method to fetch dictionary data
 async function searchWord(word: string) {
   wordSearched.value = true
   try {
@@ -23,13 +21,7 @@ async function searchWord(word: string) {
 </script>
 
 <template>
-  <main>
+  <div class="max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
     <SectionComponent :wordSearched="wordSearched" :results="results" @transmitToApp="searchWord" />
-  </main>
+  </div>
 </template>
-
-<style scoped>
-main {
-  padding: 20px;
-}
-</style>

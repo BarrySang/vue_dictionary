@@ -1,12 +1,12 @@
 <template>
-  <div class="definition-container container">
-    <div class="definition-item">
-      <p class="data-title">Definition</p>
-      <p>{{ definition }}</p>
+  <div class="bg-white rounded-lg p-4 mb-2 border border-slate-100">
+    <div class="mb-2">
+      <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">Definition</p>
+      <p class="text-sm text-slate-700 leading-relaxed">{{ definition }}</p>
     </div>
-    <div class="definition-item" v-if="example">
-      <p class="data-title">Example</p>
-      <p>{{ example }}</p>
+    <div v-if="example" class="mt-2 pl-3 border-l-2 border-indigo-200">
+      <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">Example</p>
+      <p class="text-sm text-slate-600 italic leading-relaxed">{{ example }}</p>
     </div>
   </div>
 </template>
@@ -20,29 +20,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.definition-item {
-  margin: 3px;
-}
-
-.definition-container {
-  margin: 10px !important;
-  background-color: rgb(240, 234, 234) !important;
-  padding: 10px;
-  border-radius: 5px;
-  width: 95% !important;
-}
-
-.definition-container p {
-  font-size: 12px;
-  display: block;
-  margin: 0;
-  color: rgb(27, 30, 33);
-}
-
-.data-title {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-</style>

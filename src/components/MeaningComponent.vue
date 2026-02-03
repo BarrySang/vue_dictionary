@@ -1,16 +1,25 @@
 <template>
-  <div class="container">
-    <DefinitionComponent
-      v-for="definition in definitions"
-      :key="definition.definition"
-      :definition="definition.definition"
-      :example="definition.example"
-    />
-    <div class="antonyms" v-if="antonyms.length">
-      <p>Antonyms: {{ antonyms }}</p>
+  <div class="bg-slate-50 rounded-lg p-4 mb-3">
+    <h3 v-if="partOfSpeech" class="text-sm font-semibold text-indigo-600 uppercase tracking-wide mb-3 pb-2 border-b border-slate-200">
+      {{ partOfSpeech }}
+    </h3>
+    <div class="space-y-2">
+      <DefinitionComponent
+        v-for="definition in definitions"
+        :key="definition.definition"
+        :definition="definition.definition"
+        :example="definition.example"
+      />
     </div>
-    <div class="synonyms" v-if="synonyms.length">
-      <p>Synonyms: {{ synonyms }}</p>
+    <div v-if="synonyms.length" class="mt-3 pt-2 border-t border-slate-200">
+      <p class="text-sm text-slate-600">
+        <span class="font-medium text-slate-700">Synonyms:</span> {{ synonyms }}
+      </p>
+    </div>
+    <div v-if="antonyms.length" class="mt-2">
+      <p class="text-sm text-slate-600">
+        <span class="font-medium text-slate-700">Antonyms:</span> {{ antonyms }}
+      </p>
     </div>
   </div>
 </template>
@@ -24,27 +33,10 @@ export default {
     DefinitionComponent,
   },
   props: {
+    partOfSpeech: String,
     antonyms: String,
     synonyms: String,
     definitions: Array,
   },
 }
 </script>
-
-<style scoped>
-.container {
-  display: flex !important;
-  flex-direction: column;
-  width: 100%;
-  padding: 5px;
-  background-color: rgb(233, 225, 225);
-  color: rgb(105, 75, 75);
-  margin: 5px;
-  align-items: center;
-  justify-content: center;
-}
-
-.container p {
-  margin-top: 10px;
-}
-</style>

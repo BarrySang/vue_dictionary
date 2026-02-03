@@ -1,18 +1,20 @@
 <template>
-  <div class="container">
+  <div class="flex items-center gap-2 w-full">
     <input
-      placeholder="Enter word here"
+      placeholder="Search for a word..."
       v-model="word"
       @keyup.enter="triggerWordSearch"
-      class="text-input"
+      class="flex-1 h-12 px-4 text-base text-slate-700 bg-white border border-slate-300 rounded-lg placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow"
     />
-    <button class="search-btn" @click="triggerWordSearch">
+    <button
+      @click="triggerWordSearch"
+      class="h-12 px-5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 active:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors flex items-center justify-center shrink-0 cursor-pointer"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="25"
-        height="25"
+        width="20"
+        height="20"
         fill="currentColor"
-        class="bi bi-search search-icon"
         viewBox="0 0 16 16"
       >
         <path
@@ -39,26 +41,3 @@ export default {
   emits: ['triggerWordSearch'],
 }
 </script>
-
-<style>
-.search-btn {
-  width: 20%;
-  height: 60px;
-  margin-left: 10px;
-  padding-top: 5px;
-}
-
-.search-icon {
-  margin-left: 10px;
-}
-
-.text-input {
-  width: 90%;
-  height: 50px;
-  font-size: 20px;
-  padding: 5px;
-  margin: 10px;
-  border-radius: 3px;
-  border: 0;
-}
-</style>

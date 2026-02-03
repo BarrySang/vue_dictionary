@@ -1,11 +1,15 @@
 <template>
-  <div class="container">
-    <h3 @click="toggleVisibility">
-      Source url
-      <span v-if="!isVisible">+</span>
-      <span v-else>-</span>
-    </h3>
-    <p v-show="isVisible">Source url: {{ url }}</p>
+  <div>
+    <button
+      @click="toggleVisibility"
+      class="text-xs text-slate-500 hover:text-slate-700 flex items-center gap-1 transition-colors cursor-pointer"
+    >
+      Source URL
+      <span class="text-[10px]">{{ isVisible ? '−' : '+' }}</span>
+    </button>
+    <p v-show="isVisible" class="mt-1 text-[10px] text-slate-400 break-all">
+      {{ url }}
+    </p>
   </div>
 </template>
 
@@ -27,20 +31,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.container {
-  display: block !important;
-  font-size: 12px;
-}
-
-.container p {
-  margin: 0;
-  font-size: 8px;
-}
-
-.container h3 {
-  margin: 0;
-  font-size: 12px;
-}
-</style>
